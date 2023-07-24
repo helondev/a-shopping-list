@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-one">
+        
+        <div class="container mt-5">
+            <header>Shopping List</header>
+            <input type="text" placeholder="Grocery Name" id="input-name" class="input-name"><br>
+            <input type="number" placeholder="Price" id="input-price" class="input-price"><br>
+            <input type="number" placeholder="Unit" id="input-unit" class="input-unit"><br>
+            <button onclick="addtocart()" type="button" class="btn w-50 mb-4 btn-primary" >ADD TO CART <svg xmlns="http://www.w3.org/2000/svg" width="30px" class="cartsvg" fill="white" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg></button>
+            <p id="total" class="total"></p>
+        </div>
+
+        <div id="cartresult" ></div>
+    </div>
+
+
+
+
+
+    
+
+
+    <script>
+        cart = [];
+
+        function addtocart() {
+            let name = document.getElementById("input-name").value;
+            let price = document.getElementById("input-price").value;
+            let unit = document.getElementById("input-unit").value;
+            let totals = document.getElementById("total").value;
+            
+
+            let newcart = [name, price, unit];
+
+            cart.push(newcart);
+
+            document.getElementById("input-name").value = ""
+            document.getElementById("input-price").value = ""
+            document.getElementById("input-unit").value = ""
+
+            console.log(cart)
+            calTotal();
+        }
+
+        function calTotal() {
+            let total = 0;
+            let cartresults = document.getElementById("cartresult").value;
+
+            cartresult.innerHTML = "";
+
+            for (let i = 0; i < cart.length; i++) {
+                let itemTotal = cart[i][1] * cart[i][2]; // price * unit
+                total += itemTotal;
+
+                cartresult.innerHTML += `
+                    <p class="cartresult">Item:${cart[i][0]}   Price:${cart[i][1]}    Quantity:${cart[i][2]}   Sub-total:${itemTotal}   <button onclick="del(${i})" type="button" class="btn btn-danger"> delete </button>   <button onclick="edit1(${i})" type="button" class="btn btn-primary"> edit </button> </p>
+                `;
+
+
+            }
+
+            document.getElementById("total").innerHTML = `Total: ${total}`
+
+        }
+
+        function del(i) {
+            cart.splice(i, 1);
+            calTotal();
+        }
+
+        function edit1(i) {
+            let newname = prompt("Enter New Grocery Name", cart[i][0]);
+            let newprice = prompt("Enter New Price", cart[i][1]);
+            let newunit = prompt("Enter New Unit", cart[i][2]);
+            cart[i] = [newname, newprice, newunit];
+            cartresult.innerHTML = "";
+    
+            for (let i = 0; i < cart.length; i++) {
+                let itemTotal = cart[i][1] * cart[i][2]; // price * unit
+                total += itemTotal;
+
+                cartresult.innerHTML += `
+                    <p class="cartresult">Item:${cart[i][0]}   Price:${cart[i][1]}    Quantity:${cart[i][2]}   Sub-total:${itemTotal}   <button onclick="del(${i})" type="button" class="btn btn-danger"> delete </button>   <button onclick="edit1(${i})" type="button" class="btn btn-primary"> edit </button> </p>
+                `;
+
+                calTotal();
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>

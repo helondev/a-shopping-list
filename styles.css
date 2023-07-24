@@ -1,0 +1,102 @@
+.container-one {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 20%;
+    padding-top: 20px;
+    height: 100%;
+
+    background: rgb(233,103,39);
+    background: -moz-linear-gradient(180deg, rgba(233,103,39,1) 0%, rgba(215,171,81,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(233,103,39,1) 0%, rgba(215,171,81,1) 100%);
+    background: linear-gradient(180deg, rgba(233,103,39,1) 0%, rgba(215,171,81,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e96727",endColorstr="#d7ab51",GradientType=1);
+}
+
+.container {
+    border: 0px solid #000;
+    background-color: #f9f5eb;
+    text-align: center;
+    border-radius: 10px;
+    font-size: larger;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+header {
+    color: #e96727;
+    text-align: center;
+    font-weight: 900;
+    font-size: xx-large;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+}
+
+.input-name {
+    margin-top: 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.input-price {
+    margin-top: 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.input-unit {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.btn-primary {
+    background-color: #e96727;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    
+
+}
+
+.cartsvg {
+    padding-left: 10px;
+}
+
+.cartresult {
+    border: 0px solid #000;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: larger;
+    word-spacing: 20px;
+    background-color: #f9f5eb;
+    border-radius: 10px;
+    font-weight: bolder;
+    
+}
+
+.del-button {
+    height: 40px;
+    width: 10%;
+    border-radius: 20px;
+    border: none;
+    background-color: #76aaeb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    
+}
+
+.total {
+    padding-bottom: 20px;
+    font-weight: bolder;
+}
